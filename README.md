@@ -4,7 +4,7 @@ A modern and responsive Notes Application built with **React.js** and **Vite**. 
 
 ## 🚀 Live Demo
 
-🌐 https://syntecxhub-notes-app.netlify.app
+🌐 jublee-notes.netlify.app
 
 ## 📂 GitHub Repository
 
@@ -155,7 +155,7 @@ npm run preview
 **Jublee Dash**
 
 * GitHub: https://github.com/jubzNovaX197
-* LinkedIn: Add your LinkedIn profile here
+* LinkedIn: https://www.linkedin.com/in/jublee-dash-85ba35342/
 
 ---
 
