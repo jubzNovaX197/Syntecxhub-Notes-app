@@ -1,0 +1,16 @@
+.notes-display-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .notes-display-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 16px; /* slightly snugger gap on pocket viewports */
+  }
+}

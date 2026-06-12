@@ -1,0 +1,538 @@
+
+
+
+.quick-note-form-card {
+  width: 100%;
+  max-width: 640px; 
+  margin: 0 auto 32px auto; 
+  background-color: #ffffff; /* Fills bright white */
+  border: 1px solid #e2e8f0; /* Crisp Slate Border */
+  border-radius: 16px; 
+  padding: 16px; 
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 2px 4px -1px rgba(15, 23, 42, 0.01);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.quick-note-form-card:hover {
+  border-color: #cbd5e1; 
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+}
+
+
+.quick-note-form {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.quick-note-input-wrapper {
+  position: relative;
+  flex: 1; 
+  display: flex;
+  align-items: center;
+}
+
+
+.quick-note-input-icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8; /* Muted Slate */
+  display: flex;
+  align-items: center;
+  pointer-events: none; 
+}
+
+.quick-note-input-field {
+  width: 100%;
+  padding: 12px 16px 12px 42px; 
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a; /* Slate Primary Text */
+  background-color: #f1f5f9; /* Slate Surface Light */
+  border: 1px solid #e2e8f0; 
+  border-radius: 12px; 
+  outline: none; 
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.quick-note-input-field:focus {
+  background-color: #ffffff; 
+  border-color: transparent; 
+  box-shadow: 0 0 0 2px #6366f1; /* Indigo Focus Glow */
+}
+
+.quick-note-input-field::placeholder {
+  color: #94a3b8; 
+}
+
+.quick-note-add-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; 
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: #6366f1; /* Premium Indigo Primary */
+  color: #ffffff; 
+  border: none;
+  border-radius: 12px; 
+  cursor: pointer;
+  white-space: nowrap; 
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.quick-note-add-button:hover {
+  background-color: #4f46e5; 
+  box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.25), 0 2px 4px -1px rgba(99, 102, 241, 0.15);
+}
+
+.quick-note-add-button:active {
+  transform: scale(0.97);
+}
+
+/* 3.1 Tabs for Type selection */
+.form-type-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.form-type-tab-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b; /* Slate-500 Text */
+  background: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.form-type-tab-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.form-type-tab-btn.active {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+/* 3.2 Checklist Draft Fields inside Form */
+.checklist-builder-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.checklist-builder-title-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.checklist-item-input-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.checklist-draft-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #f1f5f9;  /* Muted Surface */
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;   
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+.checklist-draft-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  color: #0f172a;             
+  padding: 4px 0;
+  border-bottom: 1px dashed #e2e8f0; 
+}
+
+.checklist-draft-item:last-child {
+  border-bottom: none;
+}
+
+.checklist-draft-item-text {
+  font-weight: 500;
+  margin: 0;
+}
+
+.checklist-draft-remove-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.checklist-draft-remove-btn:hover {
+  color: #dc2626;
+  background-color: #fee2e2;
+}
+
+.checklist-builder-submit-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+/* 3.3 Scrapbook Image Upload Styles */
+.file-upload-dragzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #cbd5e1;  
+  background-color: #f1f5f9;  
+  border-radius: 12px;
+  padding: 24px 20px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  user-select: none;
+}
+
+.file-upload-dragzone:hover {
+  border-color: #6366f1;       
+  background-color: #eef2ff;   
+}
+
+.file-upload-dragzone.is-dragging {
+  border-color: #4f46e5;       
+  background-color: #eef2ff;
+  transform: scale(1.01);
+}
+
+.file-upload-dragzone.has-image {
+  cursor: default;
+  padding: 8px;
+  border-style: solid;
+  border-color: #e2e8f0;
+  background-color: #ffffff;
+}
+
+.file-upload-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.upload-prompt-head {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0f172a; 
+  margin: 0;
+}
+
+.upload-prompt-link {
+  color: #6366f1; 
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.upload-prompt-sub {
+  font-size: 11px;
+  color: #64748b; 
+  margin: 0;
+}
+
+.image-form-preview-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 220px;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f5f9;
+}
+
+.image-form-preview {
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.image-form-preview-delete {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(15, 23, 42, 0.85);
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.image-form-preview-delete:hover {
+  background-color: #dc2626;
+  transform: scale(1.1);
+}
+
+/* 3.4 Interactive Drawing Canvas styles */
+.drawing-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  background-color: #f1f5f9;   
+  border: 1px solid #e2e8f0;   
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.drawing-swatches-palette {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.drawing-swatch-btn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.drawing-swatch-btn:hover {
+  transform: scale(1.15);
+}
+
+.drawing-swatch-btn.active {
+  transform: scale(1.15);
+  border-color: #6366f1; 
+  box-shadow: 0 0 0 1.5px rgba(99, 102, 241, 0.4), inset 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.drawing-swatch-btn.is-eraser-swatch {
+  border-color: #cbd5e1;
+}
+
+.drawing-swatch-btn.is-eraser-swatch::after {
+  content: "🧼";
+  font-size: 8px;
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.drawing-thickness-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #64748b; 
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.drawing-thickness-slider {
+  cursor: pointer;
+  accent-color: #6366f1; 
+  width: 90px;
+  height: 4px;
+}
+
+.drawing-clear-canvas-btn {
+  background-color: #ffffff; 
+  border: 1px solid #e2e8f0; 
+  color: #64748b; 
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.drawing-clear-canvas-btn:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.drawing-canvas-frame {
+  position: relative;
+  width: 100%;
+}
+
+.drawing-canvas-board {
+  width: 100%;
+  height: 220px;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1; 
+  border-radius: 12px;
+  cursor: crosshair;
+  touch-action: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.canvas-instruction-overlay {
+  display: flex;
+  justify-content: center;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.canvas-instruction-overlay span {
+  font-size: 10.5px;
+  color: #94a3b8; 
+  font-weight: 500;
+}
+
+/* 4. Adaptive Responsive Breakpoints */
+@media (max-width: 540px) {
+  .quick-note-form-card {
+    padding: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .quick-note-form {
+    flex-direction: column; 
+    align-items: stretch; 
+    gap: 10px;
+  }
+  
+  .quick-note-add-button {
+    width: 100%; 
+  }
+}
+
+/* --- DARK MODE DEFINITIONS FOR NOTEFORM --- */
+body.dark-mode .quick-note-form-card {
+  background-color: #121319 !important; /* Surface Charcoal Black */
+  border-color: #222329 !important;
+  box-shadow: 0 4px 16px -1px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .quick-note-input-field {
+  background-color: #0c0d12 !important; /* Pure Coal Black */
+  border-color: #222329 !important;
+  color: #fafafb !important;
+}
+
+body.dark-mode .quick-note-input-field:focus {
+  background-color: #0c0d12 !important;
+  box-shadow: 0 0 0 2px #818cf8 !important;
+}
+
+body.dark-mode .quick-note-add-button {
+  background-color: #6366f1 !important; 
+  color: #ffffff !important;
+}
+
+body.dark-mode .quick-note-add-button:hover {
+  background-color: #4f46e5 !important;
+}
+
+body.dark-mode .form-type-tab-btn {
+  color: #818cf8 !important;
+}
+
+body.dark-mode .form-type-tab-btn:hover {
+  background-color: #0c0d12 !important;
+  color: #fafafb !important;
+}
+
+body.dark-mode .form-type-tab-btn.active {
+  background-color: #6366f1 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .drawing-canvas-board {
+  background-color: #0c0d12 !important;
+  border-color: #222329 !important;
+}
+
+body.dark-mode .canvas-stroke-color-dot,
+body.dark-mode .canvas-tool-indicator {
+  border-color: #222329 !important;
+}
+
+body.dark-mode .drawing-clear-canvas-btn {
+  background-color: #0c0d12 !important;
+  border-color: #222329 !important;
+  color: #e4e4e7 !important;
+}
+
+body.dark-mode .drawing-clear-canvas-btn:hover {
+  background-color: #121319 !important;
+}
+
+body.dark-mode .drawing-toolbar-row {
+  background-color: #0c0d12 !important;
+  border-color: #222329 !important;
+}
+
+body.dark-mode .checklist-draft-list {
+  background-color: #0c0d12 !important;
+  border-color: #222329 !important;
+}
+
+body.dark-mode .checklist-draft-item {
+  color: #fafafb !important;
+  border-color: #222329 !important;
+}
+
+body.dark-mode .file-upload-dragzone {
+  border-color: #222329 !important;
+  background-color: #0c0d12 !important;
+}
+body.dark-mode .file-upload-dragzone:hover {
+  background-color: #121319 !important;
+}
+body.dark-mode .upload-prompt-head {
+  color: #fafafb !important;
+}
+body.dark-mode .upload-prompt-sub {
+  color: #e4e4e7 !important;
+}

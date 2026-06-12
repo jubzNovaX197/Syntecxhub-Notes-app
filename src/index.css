@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-slate-50: #f8fafc;   /* Slate Background */
+  --color-slate-100: #f1f5f9;  /* Slate Surface Light */
+  --color-slate-200: #e2e8f0;  /* Boundary Border */
+  --color-slate-300: #cbd5e1;  /* Secondary Text (Dark) */
+  --color-slate-400: #94a3b8;  /* Muted Text (Light) */
+  --color-slate-500: #64748b;  /* Text Secondary / Muted */
+  --color-slate-600: #475569;  /* Muted Dark Screen */
+  --color-slate-700: #334155;  /* Border Dark */
+  --color-slate-800: #1e293b;  /* Surface Dark */
+  --color-slate-900: #0f172a;  /* Text Primary / Background Dark */
+
+  --color-indigo-50: #eef2ff;  /* Primary Light */
+  --color-indigo-100: #e0e7ff; 
+  --color-indigo-200: #c7d2fe; 
+  --color-indigo-300: #a5b4fc; 
+  --color-indigo-400: #818cf8; /* Primary Dark Theme */
+  --color-indigo-500: #6366f1; /* Primary Light Theme */
+  --color-indigo-600: #4f46e5; /* Primary Hover */
+  --color-indigo-700: #4338ca; 
+  --color-indigo-800: #3730a3; 
+  --color-indigo-900: #1e1b4b; 
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc; /* Beautiful elegant Slate-50 background from photo */
+  color: #0f172a; /* Slate-900 Primary Text color */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global Dark Mode rules for the entire app */
+body.dark-mode {
+  background-color: #06070a !important; /* Premium Matte Jet-Black */
+  color: #fafafb !important; /* Contrast text Warm White */
+}
+
+body.dark-mode .min-h-screen.bg-slate-50\/50,
+body.dark-mode .bg-slate-50\/50 {
+  background-color: #06070a !important;
+}
+
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > main#notes-dashboard-main:nth-of-type(1) {
+  background-color: #f8fafc !important; /* Light Mode Background #F8FAFC */
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 24px -1px rgba(15, 23, 42, 0.02);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Inner Creator Container box Wrapper (Selector 1) */
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > main#notes-dashboard-main:nth-of-type(1) > div:nth-of-type(2) {
+  background-color: #ffffff !important; /* Surface #FFFFFF */
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.01);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Professional Dark Mode variations for the targeted dashboard elements */
+body.dark-mode div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > main#notes-dashboard-main:nth-of-type(1) {
+  background-color: #0c0d12 !important; /* Deep carbon background instead of blue Slate */
+  border-color: #222329 !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > main#notes-dashboard-main:nth-of-type(1) > div:nth-of-type(2) {
+  background-color: #121319 !important; /* Rich matte charcoal instead of blue slate */
+  border-color: #222329 !important;
+}
+
+/* --- NO MATCHING NOTES SPECIFIC OVERRIDES --- */
+.no-matching-notes-container {
+  background-color: #f1f5f9 !important; /* Slate-100 */
+  border: 1px solid #e2e8f0 !important; /* Slate-200 */
+  color: #0f172a !important;
+  transition: all 0.3s ease;
+}
+
+.no-matching-notes-container h3 {
+  color: #0f172a !important;
+}
+
+.no-matching-notes-container p {
+  color: #64748b !important;
+}
+
+body.dark-mode .no-matching-notes-container {
+  background-color: #121319 !important; /* Surface */
+  border-color: #222329 !important;
+  color: #f1f5f9 !important;
+}
+
+body.dark-mode .no-matching-notes-container h3 {
+  color: #f1f5f9 !important;
+}
+
+body.dark-mode .no-matching-notes-container p {
+  color: #cbd5e1 !important;
+}
+
+/* --- FOOTER MAIN & DARK MODE STYLING OVERRIDES --- */
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > footer:nth-of-type(1) {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.15) !important;
+  padding: 32px 16px !important;
+  transition: all 0.3s ease;
+}
+
+div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > footer:nth-of-type(1) p {
+  color: #64748b !important;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+body.dark-mode div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > footer:nth-of-type(1) {
+  border-top: 1px solid rgba(51, 65, 85, 0.5) !important;
+}
+
+body.dark-mode div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > footer:nth-of-type(1) p {
+  color: #cbd5e1 !important;
+}
+
+/* --- MOBILE LAYOUT RESPONSIVE ADAPTATIONS --- */
+@media (max-width: 767px) {
+  /* Restructure main dashboard container on small screens to remove spacing bloat and double border effects */
+  div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > main#notes-dashboard-main:nth-of-type(1) {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 16px 8px !important;
+    margin-top: 4px !important;
+    box-shadow: none !important;
+  }
+
+  
+  div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > main#notes-dashboard-main:nth-of-type(1) > div:nth-of-type(1) {
+    padding: 16px 12px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  body.dark-mode div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > main#notes-dashboard-main:nth-of-type(1) > div:nth-of-type(1) {
+    background-color: #121319 !important;
+    border: 1px solid #222329 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  
+  div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > main#notes-dashboard-main:nth-of-type(1) > div:nth-of-type(2) {
+    padding: 16px 12px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  body.dark-mode div#root:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > main#notes-dashboard-main:nth-of-type(1) > div:nth-of-type(2) {
+    background-color: #121319 !important;
+    border: 1px solid #222329 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+  }
+}
+
+body.dark-mode .bg-white\/90,
+body.dark-mode .relative.bg-white {
+  background-color: #121319 !important; /* Matte black surface */
+  border-color: #222329 !important;
+  color: #fafafb !important;
+}
+
+body.dark-mode .border-slate-100,
+body.dark-mode .border-b {
+  border-color: #222329 !important;
+}
+
+body.dark-mode .text-slate-900,
+body.dark-mode .text-slate-800 {
+  color: #fafafb !important;
+}
+
+body.dark-mode .text-slate-700,
+body.dark-mode .text-slate-600 {
+  color: #e4e4e7 !important;
+}
+
+body.dark-mode .bg-slate-50,
+body.dark-mode .bg-slate-100 {
+  background-color: #0c0d12 !important;
+  color: #fafafb !important;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #0c0d12 !important;
+  border-color: #222329 !important;
+  color: #fafafb !important;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+  border-color: #818cf8 !important;
+  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.45) !important;
+}
+
+body.dark-mode .hover\:bg-slate-100:hover {
+  background-color: #0c0d12 !important;
+}
+
+body.dark-mode .bg-indigo-50 { background-color: rgba(99, 102, 241, 0.12) !important; }
+body.dark-mode .bg-emerald-50 { background-color: rgba(16, 185, 129, 0.12) !important; }
+body.dark-mode .bg-amber-50 { background-color: rgba(245, 158, 11, 0.12) !important; }
+body.dark-mode .bg-rose-50 { background-color: rgba(236, 72, 153, 0.12) !important; }
+body.dark-mode .bg-sky-50 { background-color: rgba(14, 165, 233, 0.12) !important; }
+body.dark-mode .bg-violet-50 { background-color: rgba(139, 92, 246, 0.12) !important; }
+
+body.dark-mode button.bg-slate-900 {
+  background-color: #818cf8 !important; /* Soft indigo accent */
+  color: #06070a !important;
+  font-weight: 600;
+}
+
+body.dark-mode button.bg-slate-100 {
+  background-color: #0c0d12 !important;
+  color: #818cf8 !important;
+}
+
+body.dark-mode button.bg-slate-100:hover {
+  background-color: #121319 !important;
+}
