@@ -4,7 +4,7 @@ A modern and responsive Notes Application built with **React.js** and **Vite**. 
 
 ## 🚀 Live Demo
 
-🌐 jublee-notes.netlify.app
+🌐 [jublee-notes.netlify.app](https://jublee-notes.netlify.app/)
 
 ## 📂 GitHub Repository
 
